@@ -89,13 +89,13 @@ export default class Carousel extends Component {
     this.trackRef && this.trackRef.addEventListener('transitionend', this.onTransitionEnd);
 
     // adding event listeners for swipe
-    if (this.node) {
+    /*if (this.node) {
       this.node.ownerDocument.addEventListener('mousemove', this.onMouseMove, true);
       this.node.ownerDocument.addEventListener('mouseup', this.onMouseUpTouchEnd, true);
       this.node.ownerDocument.addEventListener('touchstart', this.simulateEvent, true);
       this.node.ownerDocument.addEventListener('touchmove', this.simulateEvent, { passive: false });
       this.node.ownerDocument.addEventListener('touchend', this.simulateEvent, true);
-    }
+    }*/
 
     // setting size of a carousel in state
     window.addEventListener('resize', this.onResize);
@@ -572,8 +572,6 @@ export default class Carousel extends Component {
               index={index}
               width={this.getCarouselElementWidth()}
               offset={index !== slides.length ? this.props.offset : 0}
-              onMouseDown={this.onMouseDown}
-              onTouchStart={this.onTouchStart}
               clickable={this.getProp('clickToChange')}
             >
               {carouselItem}
